@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\viewcontroller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landing');
+
+Route::get('/about',[viewcontroller::class,'aboute'])->name('about');
 
 Auth::routes();
 
